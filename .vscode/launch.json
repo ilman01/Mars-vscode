@@ -1,0 +1,28 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run MARS (Bash)",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "java -jar \"${workspaceFolder}/Mars/Mars.jar\" nc \"${file}\"; echo; read -n 1 -s -r -p \"Press any key to terminate...\"; echo; exit",
+      "cwd": "${fileDirname}"
+    },
+
+    {
+      "name": "Run MARS (PowerShell)",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "java -jar \"${workspaceFolder}/Mars/Mars.jar\" nc \"${file}\"; Write-Host ''; Write-Host 'Press any key to terminate...'; $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown') | Out-Null; exit",
+      "cwd": "${fileDirname}"
+    },
+
+    {
+      "name": "Run MARS (Windows CMD)",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "java -jar \"${workspaceFolder}\\Mars\\Mars.jar\" nc \"${file}\" & echo. & pause & exit",
+      "cwd": "${fileDirname}"
+    }
+  ]
+}
