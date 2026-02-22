@@ -177,6 +177,10 @@
 
   "beq": { "prefix": "beq", "body": "beq", "description": "Branch equal" },
   "bne": { "prefix": "bne", "body": "bne", "description": "Branch not equal" },
+  "bgt": { "prefix": "bgt", "body": "bgt", "description": "Branch x > y" },
+  "blt": { "prefix": "blt", "body": "blt", "description": "Branch x < y" },
+  "bge": { "prefix": "bge", "body": "bge", "description": "Branch x >= y" },
+  "ble": { "prefix": "ble", "body": "ble", "description": "Branch x <= y" },
   "bgtz": { "prefix": "bgtz", "body": "bgtz", "description": "Branch > 0" },
   "bltz": { "prefix": "bltz", "body": "bltz", "description": "Branch < 0" },
   "bgez": { "prefix": "bgez", "body": "bgez", "description": "Branch >= 0" },
