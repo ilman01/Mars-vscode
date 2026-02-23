@@ -23,6 +23,7 @@
   "start": { "prefix": "start", "body": ".data\n\n\n.globl main\n\n.text\nmain:\n\t${1:# code here}\n\nexit:\n\tli \\$v0, 10\n\tsyscall", "description": "Template" },
   "str": { "prefix": "str", "body": "${1:stringName}: ${2:.asciiz} \"${3:Hello World!}\"", "description": "String data" },
   "strres": { "prefix": "strres", "body": "${1:stringName}: .space ${2:10}", "description": "String reserve" },
+  "moveadd": { "prefix": "moveadd", "body": "addi ${1:destination}, ${2:source}, 0", "description": "Move with addi instruction" },
 
   // =========================
   // REGISTERS
