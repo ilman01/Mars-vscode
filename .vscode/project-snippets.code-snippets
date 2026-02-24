@@ -336,14 +336,32 @@
 
   "teq": { "prefix": "teq", "body": "teq", "description": "Trap if equal" },
   "tne": { "prefix": "tne", "body": "tne", "description": "Trap if not equal" },
-  "tlt": { "prefix": "tlt", "body": "tlt", "description": "Trap if less than" },
-  "tge": { "prefix": "tge", "body": "tge", "description": "Trap if greater equal" },
+  "tlt": { "prefix": "tlt", "body": "tlt", "description": "Trap if less than (signed)" },
+  "tltu": { "prefix": "tltu", "body": "tltu", "description": "Trap if less than (unsigned)" },
+  "tge": { "prefix": "tge", "body": "tge", "description": "Trap if greater or equal (signed)" },
+  "tgeu": { "prefix": "tgeu", "body": "tgeu", "description": "Trap if greater or equal (unsigned)" },
+
+  "teqi": { "prefix": "teqi", "body": "teqi", "description": "Trap if equal immediate" },
+  "tnei": { "prefix": "tnei", "body": "tnei", "description": "Trap if not equal immediate" },
+  "tlti": { "prefix": "tlti", "body": "tlti", "description": "Trap if less than immediate (signed)" },
+  "tltiu": { "prefix": "tltiu", "body": "tltiu", "description": "Trap if less than immediate (unsigned)" },
+  "tgei": { "prefix": "tgei", "body": "tgei", "description": "Trap if greater or equal immediate (signed)" },
+  "tgeiu": { "prefix": "tgeiu", "body": "tgeiu", "description": "Trap if greater or equal immediate (unsigned)" },
 
   // Comma Version
   "teq,": { "prefix": "teq,", "body": "teq ${1:source1}, ${2:source2}", "description": "Trap if equal" },
   "tne,": { "prefix": "tne,", "body": "tne ${1:source1}, ${2:source2}", "description": "Trap if not equal" },
-  "tlt,": { "prefix": "tlt,", "body": "tlt ${1:source1}, ${2:source2}", "description": "Trap if less than" },
-  "tge,": { "prefix": "tge,", "body": "tge ${1:source1}, ${2:source2}", "description": "Trap if greater equal" },
+  "tlt,": { "prefix": "tlt,", "body": "tlt ${1:source1}, ${2:source2}", "description": "Trap if less than (signed)" },
+  "tltu,": { "prefix": "tltu,", "body": "tltu ${1:source1}, ${2:source2}", "description": "Trap if less than (unsigned)" },
+  "tge,": { "prefix": "tge,", "body": "tge ${1:source1}, ${2:source2}", "description": "Trap if greater or equal (signed)" },
+  "tgeu,": { "prefix": "tgeu,", "body": "tgeu ${1:source1}, ${2:source2}", "description": "Trap if greater or equal (unsigned)" },
+
+  "teqi,": { "prefix": "teqi,", "body": "teqi ${1:source}, ${2:immediate}", "description": "Trap if equal immediate" },
+  "tnei,": { "prefix": "tnei,", "body": "tnei ${1:source}, ${2:immediate}", "description": "Trap if not equal immediate" },
+  "tlti,": { "prefix": "tlti,", "body": "tlti ${1:source}, ${2:immediate}", "description": "Trap if less than immediate (signed)" },
+  "tltiu,": { "prefix": "tltiu,", "body": "tltiu ${1:source}, ${2:immediate}", "description": "Trap if less than immediate (unsigned)" },
+  "tgei,": { "prefix": "tgei,", "body": "tgei ${1:source}, ${2:immediate}", "description": "Trap if greater or equal immediate (signed)" },
+  "tgeiu,": { "prefix": "tgeiu,", "body": "tgeiu ${1:source}, ${2:immediate}", "description": "Trap if greater or equal immediate (unsigned)" },
 
   // =========================
   // FLOAT REGISTERS
