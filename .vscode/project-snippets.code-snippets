@@ -256,6 +256,9 @@
   "bltzal": { "prefix": "bltzal", "body": "bltzal", "description": "Branch < 0 and link" },
   "bgezal": { "prefix": "bgezal", "body": "bgezal", "description": "Branch >= 0 and link" },
 
+  "bc1t": { "prefix": "bc1t", "body": "bc1t", "description": "Branch on FP true" },
+  "bc1f": { "prefix": "bc1f", "body": "bc1f", "description": "Branch on FP false" },
+
   // Comma Version
   "beq,": { "prefix": "beq,", "body": "beq ${1:source1}, ${2:source2}, ${3:label}", "description": "Branch equal" },
   "bne,": { "prefix": "bne,", "body": "bne ${1:source1}, ${2:source2}, ${3:label}", "description": "Branch not equal" },
@@ -272,6 +275,9 @@
   "bnez,": { "prefix": "bnez,", "body": "bnez ${1:source}, ${2:label}", "description": "Branch if not zero" },
   "bltzal,": { "prefix": "bltzal,", "body": "bltzal ${1:source}, ${2:label}", "description": "Branch < 0 and link" },
   "bgezal,": { "prefix": "bgezal,", "body": "bgezal ${1:source}, ${2:label}", "description": "Branch >= 0 and link" },
+
+  "bc1t,": { "prefix": "bc1t,", "body": "bc1t ${1:label}", "description": "Branch on FP true" },
+  "bc1f,": { "prefix": "bc1f,", "body": "bc1f ${1:label}", "description": "Branch on FP false" },
 
   // =========================
   // JUMP
@@ -364,6 +370,75 @@
   "tgeiu,": { "prefix": "tgeiu,", "body": "tgeiu ${1:source}, ${2:immediate}", "description": "Trap if greater or equal immediate (unsigned)" },
 
   // =========================
+  // ATOMIC
+  // =========================
+
+  "ll": { "prefix": "ll", "body": "ll", "description": "Load linked (atomic)" },
+  "sc": { "prefix": "sc", "body": "sc", "description": "Store conditional (atomic)" },
+
+  // Comma Version
+  "ll,": { "prefix": "ll,", "body": "ll ${1:destination}, ${2:offset}(${3:baseAddress})", "description": "Load linked (atomic)" },
+  "sc,": { "prefix": "sc,", "body": "sc ${1:source}, ${2:offset}(${3:baseAddress})", "description": "Store conditional (atomic)" },
+
+  // =========================
+  // COPROCESSOR
+  // =========================
+
+  "lwc1": { "prefix": "lwc1", "body": "lwc1", "description": "Load word to coprocessor 1" },
+  "ldc1": { "prefix": "ldc1", "body": "ldc1", "description": "Load double to coprocessor 1" },
+  "swc1": { "prefix": "swc1", "body": "swc1", "description": "Store word from coprocessor 1" },
+  "sdc1": { "prefix": "sdc1", "body": "sdc1", "description": "Store double from coprocessor 1" },
+
+  "mfc0": { "prefix": "mfc0", "body": "mfc0", "description": "Move from coprocessor 0" },
+  "mtc0": { "prefix": "mtc0", "body": "mtc0", "description": "Move to coprocessor 0" },
+  "mfc1": { "prefix": "mfc1", "body": "mfc1", "description": "Move from coprocessor 1" },
+  "mtc1": { "prefix": "mtc1", "body": "mtc1", "description": "Move to coprocessor 1" },
+
+  // Comma Version
+  "lwc1,": { "prefix": "lwc1,", "body": "lwc1 ${1:fpReg}, ${2:offset}(${3:baseAddress})", "description": "Load word to coprocessor 1" },
+  "ldc1,": { "prefix": "ldc1,", "body": "ldc1 ${1:fpReg}, ${2:offset}(${3:baseAddress})", "description": "Load double to coprocessor 1" },
+  "swc1,": { "prefix": "swc1,", "body": "swc1 ${1:fpReg}, ${2:offset}(${3:baseAddress})", "description": "Store word from coprocessor 1" },
+  "sdc1,": { "prefix": "sdc1,", "body": "sdc1 ${1:fpReg}, ${2:offset}(${3:baseAddress})", "description": "Store double from coprocessor 1" },
+
+  "mfc0,": { "prefix": "mfc0,", "body": "mfc0 ${1:destination}, ${2:cp0reg}", "description": "Move from coprocessor 0" },
+  "mtc0,": { "prefix": "mtc0,", "body": "mtc0 ${1:source}, ${2:cp0reg}", "description": "Move to coprocessor 0" },
+  "mfc1,": { "prefix": "mfc1,", "body": "mfc1 ${1:destination}, ${2:fpReg}", "description": "Move from coprocessor 1" },
+  "mtc1,": { "prefix": "mtc1,", "body": "mtc1 ${1:source}, ${2:fpReg}", "description": "Move to coprocessor 1" },
+
+  // =========================
+  // FLOATING POINT INSTRUCTIONS
+  // =========================
+
+  "add.s": { "prefix": "add.s", "body": "add.s", "description": "FP add single" },
+  "sub.s": { "prefix": "sub.s", "body": "sub.s", "description": "FP sub single" },
+  "mul.s": { "prefix": "mul.s", "body": "mul.s", "description": "FP mul single" },
+  "div.s": { "prefix": "div.s", "body": "div.s", "description": "FP div single" },
+
+  "l.s": { "prefix": "l.s", "body": "l.s", "description": "Load single float" },
+  "s.s": { "prefix": "s.s", "body": "s.s", "description": "Store single float" },
+  "l.d": { "prefix": "l.d", "body": "l.d", "description": "Load double" },
+  "s.d": { "prefix": "s.d", "body": "s.d", "description": "Store double" },
+
+  "c.eq.s": { "prefix": "c.eq.s", "body": "c.eq.s", "description": "FP compare equal single" },
+  "c.lt.s": { "prefix": "c.lt.s", "body": "c.lt.s", "description": "FP compare less single" },
+  "c.le.s": { "prefix": "c.le.s", "body": "c.le.s", "description": "FP compare less equal single" },
+
+  // Comma Version
+  "add.s,": { "prefix": "add.s,", "body": "add.s ${1:dest}, ${2:src1}, ${3:src2}", "description": "FP add single" },
+  "sub.s,": { "prefix": "sub.s,", "body": "sub.s ${1:dest}, ${2:src1}, ${3:src2}", "description": "FP sub single" },
+  "mul.s,": { "prefix": "mul.s,", "body": "mul.s ${1:dest}, ${2:src1}, ${3:src2}", "description": "FP mul single" },
+  "div.s,": { "prefix": "div.s,", "body": "div.s ${1:dest}, ${2:src1}, ${3:src2}", "description": "FP div single" },
+
+  "l.s,": { "prefix": "l.s,", "body": "l.s ${1:dest}, ${2:offset}(${3:base})", "description": "Load single float" },
+  "s.s,": { "prefix": "s.s,", "body": "s.s ${1:src}, ${2:offset}(${3:base})", "description": "Store single float" },
+  "l.d,": { "prefix": "l.d,", "body": "l.d ${1:dest}, ${2:offset}(${3:base})", "description": "Load double" },
+  "s.d,": { "prefix": "s.d,", "body": "s.d ${1:src}, ${2:offset}(${3:base})", "description": "Store double" },
+
+  "c.eq.s,": { "prefix": "c.eq.s,", "body": "c.eq.s ${1:src1}, ${2:src2}", "description": "FP compare equal single" },
+  "c.lt.s,": { "prefix": "c.lt.s,", "body": "c.lt.s ${1:src1}, ${2:src2}", "description": "FP compare less single" },
+  "c.le.s,": { "prefix": "c.le.s,", "body": "c.le.s ${1:src1}, ${2:src2}", "description": "FP compare less equal single" },
+
+  // =========================
   // FLOAT REGISTERS
   // =========================
 
@@ -375,6 +450,8 @@
   "$f5": { "prefix": "$f5", "body": "\\$f5", "description": "FP reg" },
   "$f6": { "prefix": "$f6", "body": "\\$f6", "description": "FP reg" },
   "$f7": { "prefix": "$f7", "body": "\\$f7", "description": "FP reg" },
+  "$f8": { "prefix": "$f8", "body": "\\$f8", "description": "FP reg" },
+  "$f9": { "prefix": "$f9", "body": "\\$f9", "description": "FP reg" },
 
   
 
@@ -386,6 +463,8 @@
   "f5": { "prefix": "f5", "body": "\\$f5", "description": "FP reg" },
   "f6": { "prefix": "f6", "body": "\\$f6", "description": "FP reg" },
   "f7": { "prefix": "f7", "body": "\\$f7", "description": "FP reg" },
+  "f8": { "prefix": "f8", "body": "\\$f8", "description": "FP reg" },
+  "f9": { "prefix": "f9", "body": "\\$f9", "description": "FP reg" },
 
   // =========================
   // SYSCALL REMINDERS
