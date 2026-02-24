@@ -216,6 +216,11 @@
   "sb": { "prefix": "sb", "body": "sb", "description": "Store byte" },
   "sh": { "prefix": "sh", "body": "sh", "description": "Store half" },
 
+  "lwl": { "prefix": "lwl", "body": "lwl", "description": "Load word left" },
+  "lwr": { "prefix": "lwr", "body": "lwr", "description": "Load word right" },
+  "swl": { "prefix": "swl", "body": "swl", "description": "Store word left" },
+  "swr": { "prefix": "swr", "body": "swr", "description": "Store word right" },
+
   // Comma Version
   "lw,": { "prefix": "lw,", "body": "lw ${1:destination}, ${2:offset}(${3:baseAddress})", "description": "Load word" },
   "sw,": { "prefix": "sw,", "body": "sw ${1:source}, ${2:offset}(${3:baseAddress})", "description": "Store word" },
@@ -225,6 +230,11 @@
   "lhu,": { "prefix": "lhu,", "body": "lhu ${1:destination}, ${2:offset}(${3:baseAddress})", "description": "Load half unsigned" },
   "sb,": { "prefix": "sb,", "body": "sb ${1:source}, ${2:offset}(${3:baseAddress})", "description": "Store byte" },
   "sh,": { "prefix": "sh,", "body": "sh ${1:source}, ${2:offset}(${3:baseAddress})", "description": "Store half" },
+
+  "lwl,": { "prefix": "lwl,", "body": "lwl ${1:destination}, ${2:offset}(${3:baseAddress})", "description": "Load word left" },
+  "lwr,": { "prefix": "lwr,", "body": "lwr ${1:destination}, ${2:offset}(${3:baseAddress})", "description": "Load word right" },
+  "swl,": { "prefix": "swl,", "body": "swl ${1:source}, ${2:offset}(${3:baseAddress})", "description": "Store word left" },
+  "swr,": { "prefix": "swr,", "body": "swr ${1:source}, ${2:offset}(${3:baseAddress})", "description": "Store word right" },
 
   // =========================
   // BRANCH
@@ -241,6 +251,11 @@
   "bgez": { "prefix": "bgez", "body": "bgez", "description": "Branch >= 0" },
   "blez": { "prefix": "blez", "body": "blez", "description": "Branch <= 0" },
 
+  "beqz": { "prefix": "beqz", "body": "beqz", "description": "Branch if equal zero" },
+  "bnez": { "prefix": "bnez", "body": "bnez", "description": "Branch if not zero" },
+  "bltzal": { "prefix": "bltzal", "body": "bltzal", "description": "Branch < 0 and link" },
+  "bgezal": { "prefix": "bgezal", "body": "bgezal", "description": "Branch >= 0 and link" },
+
   // Comma Version
   "beq,": { "prefix": "beq,", "body": "beq ${1:source1}, ${2:source2}, ${3:label}", "description": "Branch equal" },
   "bne,": { "prefix": "bne,", "body": "bne ${1:source1}, ${2:source2}, ${3:label}", "description": "Branch not equal" },
@@ -252,6 +267,11 @@
   "bltz,": { "prefix": "bltz,", "body": "bltz ${1:source}, ${2:label}", "description": "Branch < 0" },
   "bgez,": { "prefix": "bgez,", "body": "bgez ${1:source}, ${2:label}", "description": "Branch >= 0" },
   "blez,": { "prefix": "blez,", "body": "blez ${1:source}, ${2:label}", "description": "Branch <= 0" },
+
+  "beqz,": { "prefix": "beqz,", "body": "beqz ${1:source}, ${2:label}", "description": "Branch if equal zero" },
+  "bnez,": { "prefix": "bnez,", "body": "bnez ${1:source}, ${2:label}", "description": "Branch if not zero" },
+  "bltzal,": { "prefix": "bltzal,", "body": "bltzal ${1:source}, ${2:label}", "description": "Branch < 0 and link" },
+  "bgezal,": { "prefix": "bgezal,", "body": "bgezal ${1:source}, ${2:label}", "description": "Branch >= 0 and link" },
 
   // =========================
   // JUMP
@@ -285,6 +305,14 @@
   "nop": { "prefix": "nop", "body": "nop", "description": "No operation" },
   "b": { "prefix": "b", "body": "b", "description": "Uncond branch" },
   "bal": { "prefix": "bal", "body": "bal", "description": "Branch link" },
+  "lui": { "prefix": "lui", "body": "lui", "description": "Load upper immediate" },
+
+  "neg": { "prefix": "neg", "body": "neg", "description": "Negate register" },
+  "negu": { "prefix": "negu", "body": "negu", "description": "Negate unsigned" },
+  "not": { "prefix": "not", "body": "not", "description": "Bitwise NOT" },
+  "sgt": { "prefix": "sgt", "body": "sgt", "description": "Set greater than" },
+  "sge": { "prefix": "sge", "body": "sge", "description": "Set greater equal" },
+  "sle": { "prefix": "sle", "body": "sle", "description": "Set less equal" },
 
   // Comma Version
   "li,": { "prefix": "li,", "body": "li ${1:destination}, ${2:immediate}", "description": "Load immediate" },
@@ -293,6 +321,29 @@
   "nop,": { "prefix": "nop,", "body": "nop", "description": "No operation" },
   "b,": { "prefix": "b,", "body": "b ${1:label}", "description": "Uncond branch" },
   "bal,": { "prefix": "bal,", "body": "bal ${1:label}", "description": "Branch link" },
+  "lui,": { "prefix": "lui,", "body": "lui ${1:destination}, ${2:immediate}", "description": "Load upper immediate" },
+
+  "neg,": { "prefix": "neg,", "body": "neg ${1:destination}, ${2:source}", "description": "Negate register" },
+  "negu,": { "prefix": "negu,", "body": "negu ${1:destination}, ${2:source}", "description": "Negate unsigned" },
+  "not,": { "prefix": "not,", "body": "not ${1:destination}, ${2:source}", "description": "Bitwise NOT" },
+  "sgt,": { "prefix": "sgt,", "body": "sgt ${1:destination}, ${2:source1}, ${3:source2}", "description": "Set greater than" },
+  "sge,": { "prefix": "sge,", "body": "sge ${1:destination}, ${2:source1}, ${3:source2}", "description": "Set greater equal" },
+  "sle,": { "prefix": "sle,", "body": "sle ${1:destination}, ${2:source1}, ${3:source2}", "description": "Set less equal" },
+
+  // =========================
+  // TRAPS
+  // =========================
+
+  "teq": { "prefix": "teq", "body": "teq", "description": "Trap if equal" },
+  "tne": { "prefix": "tne", "body": "tne", "description": "Trap if not equal" },
+  "tlt": { "prefix": "tlt", "body": "tlt", "description": "Trap if less than" },
+  "tge": { "prefix": "tge", "body": "tge", "description": "Trap if greater equal" },
+
+  // Comma Version
+  "teq,": { "prefix": "teq,", "body": "teq ${1:source1}, ${2:source2}", "description": "Trap if equal" },
+  "tne,": { "prefix": "tne,", "body": "tne ${1:source1}, ${2:source2}", "description": "Trap if not equal" },
+  "tlt,": { "prefix": "tlt,", "body": "tlt ${1:source1}, ${2:source2}", "description": "Trap if less than" },
+  "tge,": { "prefix": "tge,", "body": "tge ${1:source1}, ${2:source2}", "description": "Trap if greater equal" },
 
   // =========================
   // FLOAT REGISTERS
