@@ -13,7 +13,7 @@
       "name": "Run MARS (Bash) (Display Registers)",
       "type": "node-terminal",
       "request": "launch",
-      "command": "java -jar \"${workspaceFolder}/Mars/Mars.jar\" nc \\$zero \\$at \\$v0 \\$v1 \\$a0 \\$a1 \\$a2 \\$a3 \\$t0 \\$t1 \\$t2 \\$t3 \\$t4 \\$t5 \\$t6 \\$t7 \\$s0 \\$s1 \\$s2 \\$s3 \\$s4 \\$s5 \\$s6 \\$s7 \\$t8 \\$t9 \\$k0 \\$k1 \\$gp \\$sp \\$fp \\$ra \"${file}\"; echo; read -n 1 -s -r -p \"Press any key to terminate...\"; echo; exit",
+      "command": "java -jar \"${workspaceFolder}/Mars/Mars.jar\" nc \\$zero \\$at \\$v0 \\$v1 \\$a0 \\$a1 \\$a2 \\$a3 \\$t0 \\$t1 \\$t2 \\$t3 \\$t4 \\$t5 \\$t6 \\$t7 \\$s0 \\$s1 \\$s2 \\$s3 \\$s4 \\$s5 \\$s6 \\$s7 \\$t8 \\$t9 \\$k0 \\$k1 \\$gp \\$sp \\$fp \\$ra \\$f0 \\$f1 \\$f2 \\$f3 \\$f4 \\$f5 \\$f6 \\$f7 \\$f8 \\$f9 \"${file}\"; echo; read -n 1 -s -r -p \"Press any key to terminate...\"; echo; exit",
       "cwd": "${fileDirname}"
     },
 
@@ -29,7 +29,7 @@
       "name": "Run MARS (PowerShell) (Display Registers)",
       "type": "node-terminal",
       "request": "launch",
-      "command": "java -jar \"${workspaceFolder}/Mars/Mars.jar\" nc `$zero `$at `$v0 `$v1 `$a0 `$a1 `$a2 `$a3 `$t0 `$t1 `$t2 `$t3 `$t4 `$t5 `$t6 `$t7 `$s0 `$s1 `$s2 `$s3 `$s4 `$s5 `$s6 `$s7 `$t8 `$t9 `$k0 `$k1 `$gp `$sp `$fp `$ra \"${file}\"; Write-Host ''; Write-Host 'Press any key to terminate...'; $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown') | Out-Null; exit",
+      "command": "java -jar \"${workspaceFolder}/Mars/Mars.jar\" nc `$zero `$at `$v0 `$v1 `$a0 `$a1 `$a2 `$a3 `$t0 `$t1 `$t2 `$t3 `$t4 `$t5 `$t6 `$t7 `$s0 `$s1 `$s2 `$s3 `$s4 `$s5 `$s6 `$s7 `$t8 `$t9 `$k0 `$k1 `$gp `$sp `$fp `$ra `$f0 `$f1 `$f2 `$f3 `$f4 `$f5 `$f6 `$f7 `$f8 `$f9 \"${file}\"; Write-Host ''; Write-Host 'Press any key to terminate...'; $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown') | Out-Null; exit",
       "cwd": "${fileDirname}"
     },
 
@@ -45,7 +45,7 @@
       "name": "Run MARS (Windows CMD) (Display Registers)",
       "type": "node-terminal",
       "request": "launch",
-      "command": "java -jar \"${workspaceFolder}\\Mars\\Mars.jar\" nc $zero $at $v0 $v1 $a0 $a1 $a2 $a3 $t0 $t1 $t2 $t3 $t4 $t5 $t6 $t7 $s0 $s1 $s2 $s3 $s4 $s5 $s6 $s7 $t8 $t9 $k0 $k1 $gp $sp $fp $ra \"${file}\" & echo. & pause & exit",
+      "command": "java -jar \"${workspaceFolder}\\Mars\\Mars.jar\" nc $zero $at $v0 $v1 $a0 $a1 $a2 $a3 $t0 $t1 $t2 $t3 $t4 $t5 $t6 $t7 $s0 $s1 $s2 $s3 $s4 $s5 $s6 $s7 $t8 $t9 $k0 $k1 $gp $sp $fp $ra $f0 $f1 $f2 $f3 $f4 $f5 $f6 $f7 $f8 $f9 \"${file}\" & echo. & pause & exit",
       "cwd": "${fileDirname}"
     }
   ]
