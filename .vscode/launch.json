@@ -10,6 +10,14 @@
     },
 
     {
+      "name": "Run MARS (Bash) (Display Registers)",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "java -jar \"${workspaceFolder}/Mars/Mars.jar\" nc \\$zero \\$at \\$v0 \\$v1 \\$a0 \\$a1 \\$a2 \\$a3 \\$t0 \\$t1 \\$t2 \\$t3 \\$t4 \\$t5 \\$t6 \\$t7 \\$s0 \\$s1 \\$s2 \\$s3 \\$s4 \\$s5 \\$s6 \\$s7 \\$t8 \\$t9 \\$k0 \\$k1 \\$gp \\$sp \\$fp \\$ra \"${file}\"; echo; read -n 1 -s -r -p \"Press any key to terminate...\"; echo; exit",
+      "cwd": "${fileDirname}"
+    },
+
+    {
       "name": "Run MARS (PowerShell)",
       "type": "node-terminal",
       "request": "launch",
@@ -18,10 +26,26 @@
     },
 
     {
+      "name": "Run MARS (PowerShell) (Display Registers)",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "java -jar \"${workspaceFolder}/Mars/Mars.jar\" nc \\$zero \\$at \\$v0 \\$v1 \\$a0 \\$a1 \\$a2 \\$a3 \\$t0 \\$t1 \\$t2 \\$t3 \\$t4 \\$t5 \\$t6 \\$t7 \\$s0 \\$s1 \\$s2 \\$s3 \\$s4 \\$s5 \\$s6 \\$s7 \\$t8 \\$t9 \\$k0 \\$k1 \\$gp \\$sp \\$fp \\$ra \"${file}\"; Write-Host ''; Write-Host 'Press any key to terminate...'; $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown') | Out-Null; exit",
+      "cwd": "${fileDirname}"
+    },
+
+    {
       "name": "Run MARS (Windows CMD)",
       "type": "node-terminal",
       "request": "launch",
       "command": "java -jar \"${workspaceFolder}\\Mars\\Mars.jar\" nc \"${file}\" & echo. & pause & exit",
+      "cwd": "${fileDirname}"
+    },
+
+    {
+      "name": "Run MARS (Windows CMD) (Display Registers)",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "java -jar \"${workspaceFolder}\\Mars\\Mars.jar\" nc \\$zero \\$at \\$v0 \\$v1 \\$a0 \\$a1 \\$a2 \\$a3 \\$t0 \\$t1 \\$t2 \\$t3 \\$t4 \\$t5 \\$t6 \\$t7 \\$s0 \\$s1 \\$s2 \\$s3 \\$s4 \\$s5 \\$s6 \\$s7 \\$t8 \\$t9 \\$k0 \\$k1 \\$gp \\$sp \\$fp \\$ra \"${file}\" & echo. & pause & exit",
       "cwd": "${fileDirname}"
     }
   ]
